@@ -1,0 +1,29 @@
+.icon-emotion {
+	width: 32px;
+	height: 32px;
+}
+
+.btn-emotion {
+	@extend .button;
+	background-color: white;
+	color: black;	
+}
+
+input[type=checkbox]:checked + .btn-emotion {
+	background-color: black;
+	color: white;   	
+}
+
+input[type=checkbox] {
+   position: absolute;
+   top: -9999px;
+   left: -9999px;
+}
+
+textarea {
+	resize: none;
+}
+
+.hidden {
+	display: none;
+}

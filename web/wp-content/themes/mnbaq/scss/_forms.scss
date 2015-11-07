@@ -1,0 +1,42 @@
+.form-field {	
+	@extend .columns;
+	@extend .small-12;		
+}
+
+.form-field-select {
+	@extend .columns;
+	@extend .small-12;	
+	@extend .medium-6;	
+	@extend .large-4;	
+}
+
+.form-field-mandatory label {
+	position: relative;
+	&::before {
+		content: '*';
+		position: absolute;
+		left: 0;
+		color: red;
+	}
+	padding-left: 10px;
+	content: '*';	
+}
+
+.form-submit {
+	@extend .columns;
+	@extend .small-12;	
+	text-align: center;
+}
+
+.form-keyboard {
+	.button {
+		padding-top: 6px;
+		padding-left: 10px;
+		padding-right: 10px;
+		color: black;
+
+		&:hover {
+			color: blue;
+		}
+	}
+}
