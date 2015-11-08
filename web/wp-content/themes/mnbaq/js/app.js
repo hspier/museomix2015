@@ -1,9 +1,8 @@
-Foundation.global.namespace = '';
+var init = false;
 $(document).foundation();
 
-$(document).ready(function() {	
+$(document).ready(function() {		
 
-	jsKeyboard.init("virtualKeyboard");
 
 	$('img.img-icon').each(function(){
     var $img = jQuery(this);
@@ -39,6 +38,18 @@ $(document).ready(function() {
 
 	});
 
+	if($("#login-form").length > 0) {
+		$("#login-form").find("input").focus(function() {
+			if(!init) {
+				jsKeyboard.init("keyboard");			
+				init = true;
+			}			
+			$("#keyboard").show();
+		}).blur(function() {
+			$("#keyboard").hide();
+		});
+	}
+
 
 	if($("#btn-comments").length > 0) {
 		$("#btn-comments").click(function(ev) {
@@ -52,7 +63,7 @@ $(document).ready(function() {
 		$("#btn-back").click(function(ev) {			
 			ev.preventDefault();
 			ev.stopPropagation();
-			history.go(-2);
+			goTo("create-feedback", "list");			
 			return false;
 		})
 	}
@@ -77,12 +88,29 @@ $(document).ready(function() {
 
 	if($("#btn-enter").length > 0) {
 		$("#btn-enter").click(function(ev) {		
-			var index = window.location.search.indexOf("work=");
-			var endIndex = window.location.search.indexOf("&", index);			
-			var work = endIndex != -1 ? window.location.search.substring(index, endIndex) : window.location.search.substring(index);			
-			window.location.search="action=log&" + work;			
+			if(window.location.search.indexOf("profile=") === -1) {
+				goTo("list", "log");				
+			} else {
+				goTo("list", "create-feedback");
+			}			
+		})
+	}
+
+	if($("#btn-quit").length > 0) {
+		$("#btn-quit").click(function(ev) {		
+			window.location.search = window.location.search.replace(/\&profile=[0-9]*/gi, "");			
+		})
+	}
+
+	if($("#btn-main").length > 0) {
+		$("#btn-main").click(function(ev) {		
+			goTo("qr", "create-profile");
 		})
 	}
 
 
 });
+
+function goTo(from, action) {
+	window.location.search=window.location.search.replace("action=" + from, "action=" + action);
+}

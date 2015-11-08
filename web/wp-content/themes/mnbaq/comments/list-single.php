@@ -29,7 +29,7 @@
 			if(!empty($exclude_category)) {
 				echo 'id="btn-list">Tout voir';
 			} else {
-				echo 'id="btn-enter">Partager';
+				echo 'id="btn-enter">Participer';
 			}			
 			echo '</button>'
 		?>		
@@ -62,6 +62,9 @@
 				}
 				echo '<br/>';
 				echo $feedback->firstname;
+				echo ' ( ';
+				echo $feedback->cat_value;
+				echo ' ) ';
 				echo '</p>';
 				echo '</div>';
 			}

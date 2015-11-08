@@ -9,10 +9,13 @@ drop table MNBAQ_MUSEUM_ROOM;
 drop table MNBAQ_EMOTION;
 drop table MNBAQ_CATEGORY;
 drop table MNBAQ_PROFILE;
-select * From mnbaq_profile_feedback;
+select * from mnbaq_profile;
+select * from MNBAQ_PROFILE_FEEDBACK;
+select * from mnbaq_profile_feedback_emotion;
 
-delete from mnbaq_profile_event where prf_id in (66);
-delete from mnbaq_profile where prf_id in (66);
+delete from mnbaq_profile_event;
+delete from mnbaq_profile where prf_id > 65;
+delete from mnbaq_profile_feedback_emotion;
 delete from mnbaq_profile_feedback;
 
 create table MNBAQ_CATEGORY (
@@ -77,7 +80,8 @@ create table MNBAQ_PROFILE_FEEDBACK (
     PRF_COMMENTS text,
     PRF_AUDIO blob,
     PRF_ID int NOT NULL,
-    WRK_ID int NOT NULL, 
+    WRK_ID int NOT NULL,
+    PRF_FEEDBACK_TIME timestamp DEFAULT CURRENT_TIMESTAMP,
     
     PRIMARY KEY (PRF_FEEDBACK_ID),
     
@@ -125,12 +129,13 @@ insert into MNBAQ_EVENT(EVT_ID, EVT_NAME) values (1, "Connexion");
 insert into MNBAQ_EVENT(EVT_ID, EVT_NAME) values (2, "Déconnexion");
 
 -- 0-11, 12-17, 18-34, 35-54, 55-69, 70-X
-insert into MNBAQ_CATEGORY(CAT_ID, CAT_TYPE, CAT_VALUE) values (1, 1, '0 à 11');
-insert into MNBAQ_CATEGORY(CAT_ID, CAT_TYPE, CAT_VALUE) values (2, 1, '12 à 17');
-insert into MNBAQ_CATEGORY(CAT_ID, CAT_TYPE, CAT_VALUE) values (3, 1, '18 à 34');
-insert into MNBAQ_CATEGORY(CAT_ID, CAT_TYPE, CAT_VALUE) values (4, 1, '35 à 54');
-insert into MNBAQ_CATEGORY(CAT_ID, CAT_TYPE, CAT_VALUE) values (5, 1, '55 à 69');
-insert into MNBAQ_CATEGORY(CAT_ID, CAT_TYPE, CAT_VALUE) values (6, 1, '70 et plus');
+select * from mnbaq_category;
+insert into MNBAQ_CATEGORY(CAT_ID, CAT_TYPE, CAT_VALUE) values (1, 1, '0 à 11 ans');
+insert into MNBAQ_CATEGORY(CAT_ID, CAT_TYPE, CAT_VALUE) values (2, 1, '12 à 17 ans');
+insert into MNBAQ_CATEGORY(CAT_ID, CAT_TYPE, CAT_VALUE) values (3, 1, '18 à 34 ans');
+insert into MNBAQ_CATEGORY(CAT_ID, CAT_TYPE, CAT_VALUE) values (4, 1, '35 à 54 ans');
+insert into MNBAQ_CATEGORY(CAT_ID, CAT_TYPE, CAT_VALUE) values (5, 1, '55 à 69 ans');
+insert into MNBAQ_CATEGORY(CAT_ID, CAT_TYPE, CAT_VALUE) values (6, 1, '70 ans et plus');
 
 insert into MNBAQ_EMOTION(EMO_ID, EMO_VALUE, EMO_IMG) values (1, 'Passion', 'img/emotion/Passion.svg');
 insert into MNBAQ_EMOTION(EMO_ID, EMO_VALUE, EMO_IMG) values (2, 'Souvenir', 'img/emotion/Souvenir.svg');

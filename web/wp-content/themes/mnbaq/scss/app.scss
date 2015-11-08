@@ -5,6 +5,49 @@
 @import "comments";
 
 body {
-	overflow-y: auto;
+	overflow-y: auto;	
+	background: url('img/bg.jpg') no-repeat 0 0 fixed;
+	background-size: cover;
 }
 
+h1 {
+	
+
+}
+
+h2 {
+	text-transform: uppercase;
+	color: $brand-color;
+	padding: 40px 0;
+}
+
+h3 {
+	color: white;
+	font-size: 1.2em;
+	text-transform: uppercase;
+	padding-bottom: 20px;
+}
+
+h4 {
+	font-style: italic;
+	color: $brand-color;
+	display: inline-block;
+	margin-bottom: 0;
+	font-size: 0.8em;
+	text-transform: uppercase;
+}
+
+.steps {
+	background-color: rgba(243, 119, 111, 0.8);
+	padding-bottom: 30px;
+	li {
+		color: black;
+		font-size: 0.8em;
+	}
+	.active,  .active.next + li {
+		color: white;
+		font-weight: 700;
+		font-size: 0.9em;
+	}	
+	
+}

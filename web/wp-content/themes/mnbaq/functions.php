@@ -33,7 +33,7 @@ function create_profile() {
 			), array( 
 				'%d' 
 			));
-		wp_redirect('?action=display_id');
+		wp_redirect('?action=qr&id=' . strtolower(($_POST['firstname'] . $profileId)));
 		exit;
   	} // end if
 
@@ -115,7 +115,7 @@ function list_feedbacks($workId, $emotionsList, $excludeCategoryId) {
 	}
 
 
-	$query = 'select distinct pf.prf_feedback_id as feedback_id, pf.prf_comments as comments, pf.prf_audio as audio, p.prf_firstname as firstname, p.cat_id as cat_id ' .
+	$query = 'select distinct pf.prf_feedback_id as feedback_id, pf.prf_comments as comments, pf.prf_audio as audio, p.prf_firstname as firstname, p.cat_id as cat_id, c.cat_value as cat_value ' .
 	 	'from mnbaq_profile_feedback pf, ' .
 		'mnbaq_profile_feedback_emotion pfe, mnbaq_category c, mnbaq_profile p where ' .
 		'p.prf_id = pf.prf_id and p.cat_id = c.cat_id and pf.prf_feedback_id = pfe.prf_feedback_id';

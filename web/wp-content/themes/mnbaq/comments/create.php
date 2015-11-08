@@ -3,13 +3,13 @@
 		<div class="columns hide-for-small-only medium-2">
 			<div>
 				<div class="rotate">
-					<div><h3>Bonjour</h3></div>					
-					<h5>
+					<div><p class="bonjour">Bonjour</p></div>					
+					<p class="name">
 						<?php 
 							$profile = get_userprofile($_GET['profile']);
 							echo $profile->prf_firstname;
 						?>
-					</h5>
+					</p>
 				</div>
 				<img style="min-height:768px;" src="<?php bloginfo('template_directory'); ?>/img/typo4.svg">
 			</div>
@@ -84,8 +84,8 @@
 					<p>SÉLECTIONNER</p>
 				</div>				
 				<div class="form-submit">
-					<button id="btn-comments" class="btn-icon"><img class="img-icon" src="<?php bloginfo('template_directory'); ?>/img/keyboard55.svg"></button>
-					<button id="btn-audio" class="btn-icon" disabled><img class="img-icon" src="<?php bloginfo('template_directory'); ?>/img/micro2.svg"></button>
+					<button id="btn-comments" class="btn-icon"><img class="img-icon" src="<?php bloginfo('template_directory'); ?>/img/clavier-2.svg"></button>
+					<button id="btn-audio" class="btn-icon" disabled><img class="img-icon" src="<?php bloginfo('template_directory'); ?>/img/micro-2.svg"></button>
 				</div>
 				<div id="comments_row" class="row hidden">
 					<textarea rows="10" placeholder="Saisir votre commentaire..." name="comments"></textarea>

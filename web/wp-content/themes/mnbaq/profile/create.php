@@ -1,4 +1,4 @@
-<div class="create-content">
+<div id="login-form" class="create-content">
 	<form action="" method="post"> 
 		<div class="row">
 			<div class="form-field form-field-mandatory">
@@ -64,6 +64,6 @@
 		</div>		
 		 <input type="hidden" name="inscription" value="1" />
 	</form>
-	<div id="virtualKeyboard" class="form-keyboard"></div>
+	<div id="keyboard" class="form-keyboard"></div>
 </div>
 
