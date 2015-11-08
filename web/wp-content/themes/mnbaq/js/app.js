@@ -76,6 +76,15 @@ $(document).ready(function() {
 		})
 	}
 
+	if($("#btn-cancel").length > 0) {
+		$("#btn-cancel").click(function(ev) {			
+			ev.preventDefault();
+			ev.stopPropagation();
+			goTo("log", "list");			
+			return false;
+		})
+	}
+
 	if($("#btn-list").length > 0) {
 		$("#btn-list").click(function(ev) {			
 			var location = window.location.search.replace(/\&exclude_category=[0-9]*/gi, "");

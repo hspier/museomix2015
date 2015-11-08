@@ -7,6 +7,7 @@
 		
 		<div class="form-submit">
 			<button id="btn-log">Continuer</button>
+			<button id="btn-cancel">Annuler</button>
 		</div>		
 		 <input type="hidden" name="login" value="1" />
 	</form>	
