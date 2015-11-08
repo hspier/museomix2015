@@ -1,7 +1,7 @@
-<div class="create-content">
+<div class="create-content work-content">
 	<form action="" method="post"> 
 		<div class="form-field">
-			<label>Identifiant : </label>
+			<label>Code usager : </label>
 			<input type="text" name="id"/>
 		</div>
 		
