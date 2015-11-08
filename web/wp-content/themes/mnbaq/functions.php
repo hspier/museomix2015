@@ -41,7 +41,7 @@ function create_profile() {
 function log_profile() {
 	if ( isset( $_POST['login'] ) && '1' == $_POST['login'] ) {		
 		$workId = $_GET['work'];
-		$profile = $GLOBALS['wpdb']->get_row('select prf_id from mnbaq_profile where lower(prf_auth_id)  = \'' . strtolower($_POST['id']) . '\'');
+		$profile = $GLOBALS['wpdb']->get_row('select prf_id from mnbaq_profile where concat(lower(prf_firstname), prf_id)  = \'' . strtolower($_POST['id']) . '\'');
 		if(empty($profile)) {
 			wp_redirect('?action=list&work=' . $workId);
 		} else {			
