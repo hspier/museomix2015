@@ -3,8 +3,7 @@
 function create_profile() {
 	if ( isset( $_POST['inscription'] ) && '1' == $_POST['inscription'] ) {		
  		$GLOBALS['wpdb']->insert('mnbaq_profile', array( 
- 			'PRF_FIRSTNAME' => $_POST['firstname'],  
- 			'PRF_LASTNAME' => $_POST['lastname'],
+ 			'PRF_FIRSTNAME' => $_POST['firstname'],   			
  			'PRF_EMAIL' => $_POST['email'],
  			'CAT_ID' => $_POST['age']),
  		array( 
