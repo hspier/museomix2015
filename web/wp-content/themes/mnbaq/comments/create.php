@@ -2,7 +2,16 @@
 	<div class="row">
 		<div class="columns hide-for-small-only medium-2">
 			<div>
-				<img src="<?php bloginfo('template_directory'); ?>/img/typo4.svg">
+				<div class="rotate">
+					<div><h3>Bonjour</h3></div>					
+					<h5>
+						<?php 
+							$profile = get_userprofile($_GET['profile']);
+							echo $profile->prf_firstname;
+						?>
+					</h5>
+				</div>
+				<img style="min-height:768px;" src="<?php bloginfo('template_directory'); ?>/img/typo4.svg">
 			</div>
 		</div>		
 		<div class="columns small-12 medium-10">
@@ -82,7 +91,8 @@
 					<textarea rows="10" placeholder="Saisir votre commentaire..." name="comments"></textarea>
 				</div>
 				<div class="form-submit">
-					<button>Soumettre</button>
+					<button id="btn-share">Partager</button>
+					<button id="btn-back">Annuler</button>
 				</div>		
 				<input type="hidden" name="comment" value="1" />
 			</form>

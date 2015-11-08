@@ -39,6 +39,19 @@ function create_profile() {
 
 }
 
+function log_profile() {
+	if ( isset( $_POST['login'] ) && '1' == $_POST['login'] ) {		
+		$workId = $_GET['work'];
+		$profile = $GLOBALS['wpdb']->get_row('select prf_id from mnbaq_profile where prf_auth_id  = \'' . $_POST['id'] . '\'');
+		if(empty($profile)) {
+			wp_redirect('?action=list&work=' . $workId);
+		} else {			
+			wp_redirect('?action=create-feedback&work=' . $workId . '&profile=' . $profile->prf_id);
+			exit;
+		}
+	}
+}
+
 function get_userprofile($profileId) {
 	return $GLOBALS['wpdb']->get_row('select prf_firstname, cat_id, prf_auth_id from mnbaq_profile where prf_id = ' . $profileId);	
 }
@@ -82,7 +95,7 @@ function create_comments() {
 			}
  		}
  		$profile = get_userprofile($profileId);
- 		wp_redirect('?action=list&work=' .  $workId . '&emotions=' . join('_', $selectedEmotions) . '&exclude_category=' . $profile->cat_id);
+ 		wp_redirect('?action=list&work=' .  $workId . '&emotions=' . join('_', $selectedEmotions) . '&exclude_category=' . $profile->cat_id . "&profile=" . $profile->prf_id);
 		exit;		
   	} // end if
 
@@ -96,22 +109,34 @@ function list_categories() {
 	return $GLOBALS['wpdb']->get_results('select cat_value, cat_id from mnbaq_category');
 }
 
-function list_feedbacks($workId, $emotions, $excludeCategoryId) {
-	$query = 'select distinct pf.prf_comments as comments, pf.prf_audio as audio, p.prf_firstname as firstname, p.cat_id as cat_id ' .
+function list_feedbacks($workId, $emotionsList, $excludeCategoryId) {
+	if(isset( $_GET['profile'])) {
+		$profileId = $_GET['profile'];
+	}
+
+
+	$query = 'select distinct pf.prf_feedback_id as feedback_id, pf.prf_comments as comments, pf.prf_audio as audio, p.prf_firstname as firstname, p.cat_id as cat_id ' .
 	 	'from mnbaq_profile_feedback pf, ' .
 		'mnbaq_profile_feedback_emotion pfe, mnbaq_category c, mnbaq_profile p where ' .
 		'p.prf_id = pf.prf_id and p.cat_id = c.cat_id and pf.prf_feedback_id = pfe.prf_feedback_id';
 	if($workId) {
 		$query = $query . ' and pf.wrk_id = ' . $workId;
 	} 
-	if($emotions) {
-		$query = $query . ' and pfe.emo_id in (' . join(', ', $emotions) . ')';
+	if($emotionsList) {
+		$query = $query . ' and pfe.emo_id in (' . join(', ', $emotionsList) . ')';
 	}
 	if($excludeCategoryId) {
 		$query = $query . ' and p.cat_id <> ' . $excludeCategoryId;
 	}
+	if($profileId) {
+		$query = $query . ' and p.prf_id <> ' . $profileId;	
+	}
 		// where wrk_id =
 	return $GLOBALS['wpdb']->get_results($query);	
+}
+
+function list_feedback_emotions($feedbackId) {
+	return $GLOBALS['wpdb']->get_results('select e.emo_img as emo_img from mnbaq_profile_feedback_emotion pfe, mnbaq_emotion e where pfe.emo_id = e.emo_id and pfe.prf_feedback_id = ' . $feedbackId);
 }
 
 function list_works() {
@@ -124,5 +149,6 @@ function list_active_profiles() {
 
 add_action('init', 'create_profile');
 add_action('init', 'create_comments');
+add_action('init', 'log_profile');
 
 ?>

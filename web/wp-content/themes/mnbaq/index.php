@@ -11,8 +11,10 @@ get_header(); ?>
 				include(TEMPLATEPATH . '/comments/list.php');	
 			} else if ($action == "create-profile") {
 				include(TEMPLATEPATH . '/profile/create.php');	
-			}  else if ($action == "qr") {
+			} else if ($action == "qr") {
 				include(TEMPLATEPATH . '/profile/qr.php');	
+			} else if ($action == "log") {
+				include(TEMPLATEPATH . '/profile/log.php');	
 			} else {
 				include(TEMPLATEPATH . '/debug.php');
 			} 

@@ -2105,6 +2105,10 @@ blockquote, blockquote p {
   width: 64px;
   height: 64px; }
 
+.img-icon.small-icon {
+  width: 32px;
+  height: 32px; }
+
 .btn-icon {
   background-color: transparent;
   text-align: center;
@@ -2131,6 +2135,41 @@ input[type=checkbox] {
   top: -9999px;
   left: -9999px; }
 
+.rotate {
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg); }
+  .rotate div {
+    position: absolute;
+    top: -40px;
+    left: -100px;
+    width: 200px;
+    background-color: black; }
+    .rotate div h3 {
+      color: white;
+      padding-left: 10px;
+      text-transform: uppercase; }
+  .rotate h5 {
+    position: absolute;
+    top: 0px;
+    right: 150px;
+    color: black;
+    text-transform: uppercase; }
+
+cite:before {
+  content: '« '; }
+cite:after {
+  content: ' »'; }
+
+h6 {
+  font-size: 0.8em; }
+  h6:first-of-type {
+    margin-top: 10px; }
+  h6:last-of-type {
+    margin-bottom: 20px; }
+
 textarea {
   resize: none; }
 
@@ -2145,26 +2184,33 @@ strong {
   padding-right: 0px; }
 
 .comments_box {
+  margin: 5px 0;
   padding: 10px;
-  border: 1px solid black; }
+  padding-bottom: 0px;
+  border: 1px solid black;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px; }
+  .comments_box p {
+    margin-bottom: 2px; }
 
 .comments_1 {
-  background-color: salmon; }
+  background-color: #ebe0e0; }
 
 .comments_2 {
-  background-color: lightblue; }
+  background-color: #ebe6e0; }
 
 .comments_3 {
-  background-color: lightgreen; }
+  background-color: #ebebe0; }
 
 .comments_4 {
-  background-color: beige; }
+  background-color: #e0ebe0; }
 
 .comments_5 {
-  background-color: lightgrey; }
+  background-color: #e0e6eb; }
 
 .comments_6 {
-  background-color: lightbrown; }
+  background-color: #ebe0eb; }
 
 body {
   overflow-y: auto; }

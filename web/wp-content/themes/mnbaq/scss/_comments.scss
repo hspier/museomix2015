@@ -3,6 +3,11 @@
 	height: 64px;
 }
 
+.img-icon.small-icon {
+	width: 32px;
+	height: 32px;
+}
+
 .btn-icon {
 	@extend .button;
 	background-color: transparent;
@@ -42,6 +47,54 @@ input[type=checkbox] {
    left: -9999px;
 }
 
+.rotate {
+	& div {
+		position: absolute;
+		top: -40px;	
+		left: -100px;		
+		width: 200px;
+		& h3 {
+			color: white;
+			padding-left: 10px;
+			text-transform: uppercase;			
+		}					
+		background-color: $brand-color;
+		
+	}
+	& h5 {
+		position: absolute;		
+		top: 0px;
+		right: 150px;
+		color: $brand-color;
+		text-transform: uppercase;
+	}
+	-webkit-transform: rotate(-90deg);
+	-moz-transform: rotate(-90deg);
+	-ms-transform: rotate(-90deg);
+	-o-transform: rotate(-90deg);
+	transform: rotate(-90deg);
+}
+
+cite {
+	&:before {
+		content: '« ';
+	}
+	&:after {
+		content: ' »';
+	}
+}
+
+h6 {
+	font-size: 0.8em;
+
+	&:first-of-type {
+		margin-top: 10px;
+	}
+	&:last-of-type {
+		margin-bottom: 20px;
+	}
+}
+
 textarea {
 	resize: none;
 }
@@ -60,30 +113,36 @@ strong {
 }
 
 .comments_box {
+	margin: 5px 0;
 	padding: 10px;
+	padding-bottom: 0px;
+	& p {
+		margin-bottom: 2px;
+	}
 	border: 1px solid black;
+	@include border-radius(2px);
 }
 
 .comments_1 {
-	background-color: salmon;
+	background-color: #EBE0E0;
 }
 
 .comments_2 {
-	background-color: lightblue;	
+	background-color: #EBE6E0;	
 }
 
 .comments_3 {
-	background-color: lightgreen;
+	background-color: #EBEBE0;
 }
 
 .comments_4 {
-	background-color: beige;
+	background-color: #E0EBE0;
 }
 
 .comments_5 {
-	background-color: lightgrey;
+	background-color: #E0E6EB;
 }
 
 .comments_6 {
-	background-color: lightbrown;
+	background-color: #EBE0EB;
 }

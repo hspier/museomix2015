@@ -1,1 +1,15 @@
-	$brand-color: black;
+$brand-color: black;
+$alternate-color: red;
+
+
+@mixin shadow($horizontal, $vertical, $blur, $spread, $color) {
+  -moz-box-shadow:    $horizontal $vertical $blur $spread $color;
+  -webkit-box-shadow: $horizontal $vertical $blur $spread $color;
+  box-shadow:         $horizontal $vertical $blur $spread $color;
+}
+
+@mixin border-radius($value) {	
+  -moz-border-radius: $value;
+  -webkit-border-radius: $value;
+  border-radius: $value; 
+}

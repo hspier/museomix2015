@@ -48,4 +48,41 @@ $(document).ready(function() {
 			return false;
 		})
 	}
+	if($("#btn-back").length > 0) {
+		$("#btn-back").click(function(ev) {			
+			ev.preventDefault();
+			ev.stopPropagation();
+			history.go(-2);
+			return false;
+		})
+	}
+	if($("#btn-share").length > 0) {
+		$("#btn-share").click(function(ev) {			
+			if($("input[type='checkbox']:checked").length == 0) {
+				ev.preventDefault();
+				ev.stopPropagation();			
+				alert("Qu'est-ce que cette oeuvre évoque pour vous ?");
+				return false;
+			}
+		})
+	}
+
+	if($("#btn-list").length > 0) {
+		$("#btn-list").click(function(ev) {			
+			var location = window.location.search.replace(/\&exclude_category=[0-9]*/gi, "");
+			location = location.replace(/\&emotions=([0-9]*_){1,}[0-9]*/gi, "");			
+			window.location.search=location;
+		})
+	}
+
+	if($("#btn-enter").length > 0) {
+		$("#btn-enter").click(function(ev) {		
+			var index = window.location.search.indexOf("work=");
+			var endIndex = window.location.search.indexOf("&", index);			
+			var work = endIndex != -1 ? window.location.search.substring(index, endIndex) : window.location.search.substring(index);			
+			window.location.search="action=log&" + work;			
+		})
+	}
+
+
 });
