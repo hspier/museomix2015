@@ -10,7 +10,7 @@
 		$exclude_category = $_GET['exclude_category'];
 	}	
 ?>
-<div class="row">
+<div class="row work-content">
 	<div class="columns hide-for-small-only medium-3 large-2">
 		<?php	
 			$work = get_work($workId);
@@ -29,9 +29,12 @@
 			if(!empty($exclude_category)) {
 				echo 'id="btn-list">Tout voir';
 			} else {
-				echo 'id="btn-enter">Participer';
+				echo 'id="btn-enter">Réagir';
 			}			
-			echo '</button>'
+			echo '</button>';
+			if(isset($_GET['profile'])) {
+				echo '<button id="btn-quit">Quitter</button>';	
+			}
 		?>		
 	</div>
 	<div class="columns small-12 medium-9 large-10">

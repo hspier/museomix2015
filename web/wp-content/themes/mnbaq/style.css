@@ -2101,6 +2101,9 @@ blockquote, blockquote p {
   .form-keyboard .button:hover {
     color: blue; }
 
+.work-content {
+  padding-top: 40px; }
+
 .img-icon {
   width: 64px;
   height: 64px; }
@@ -2128,6 +2131,11 @@ blockquote, blockquote p {
   fill: #005cab; }
 #btn-comments:hover path, #btn-audio:hover path {
   fill: #f3776f; }
+#btn-comments[disabled], #btn-comments[disabled]:hover, #btn-comments[disabled]:focus, #btn-audio[disabled], #btn-audio[disabled]:hover, #btn-audio[disabled]:focus {
+  fill: lightgray; }
+
+#btn-quit {
+  background-color: #f3776f; }
 
 input[type=checkbox]:checked + .btn-icon path {
   fill: #f3776f; }

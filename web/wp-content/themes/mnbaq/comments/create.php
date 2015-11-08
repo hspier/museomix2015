@@ -1,4 +1,4 @@
-<div class="create-content">
+<div class="create-content work-content">
 	<div class="row">
 		<div class="columns hide-for-small-only medium-2">
 			<div>
