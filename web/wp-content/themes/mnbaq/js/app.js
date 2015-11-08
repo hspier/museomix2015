@@ -45,8 +45,6 @@ $(document).ready(function() {
 				init = true;
 			}			
 			$("#keyboard").show();
-		}).blur(function() {
-			$("#keyboard").hide();
 		});
 	}
 
