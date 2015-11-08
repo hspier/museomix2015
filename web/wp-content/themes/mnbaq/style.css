@@ -2245,9 +2245,13 @@ h4 {
   background-color: rgba(243, 119, 111, 0.8);
   padding-bottom: 30px; }
   .steps li {
-    color: black;
+    color: white;
     font-size: 0.8em; }
+    .steps li span {
+      color: black; }
   .steps .active, .steps .active.next + li {
     color: white;
     font-weight: 700;
     font-size: 0.9em; }
+    .steps .active span, .steps .active.next + li span {
+      color: black; }

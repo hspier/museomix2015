@@ -1,5 +1,14 @@
 <div class="row">
 	<div class="columns hide-for-small-only medium-2">
+		<div class="rotate">
+			<div><p class="bonjour">Bonjour</p></div>					
+			<p class="name">
+				<?php 
+					$profile = get_userprofile($_GET['profile']);
+					echo $profile->prf_firstname;
+				?>
+			</p>
+		</div>
 	</div>
 	<?php 
 		$create = true;
@@ -44,10 +53,10 @@
 			<div class="columns small-4 steps">
 				<h3>Étapes à suivre pour participer</h3>
 				<ol>
-					<li class="<?php if($create) echo 'active'; ?>">Inscrivez votre nom, groupe d'âge et adresse courriel (facultatif)</li>
-					<li class="<?php if(!$create) echo 'active next'; ?>">Notez le code qui vous est attribué</li>
-					<li>Rendez-vous dans les salles de l'exposition "Passion Privée"</li>
-					<li>Cherchez les 4 bornes <i>Générateur d'émotions</i> et entrez votre code pour vivre l'expérience intergénérationelle !</li>
+					<li class="<?php if($create) echo 'active'; ?>"><span>Inscrivez votre nom, groupe d'âge et adresse courriel (facultatif)</span></li>
+					<li class="<?php if(!$create) echo 'active next'; ?>"><span>Notez le code qui vous est attribué</span></li>
+					<li><span>Rendez-vous dans les salles de l'exposition "Passion Privée"</span></li>
+					<li><span>Cherchez les 4 bornes <i>Générateur d'émotions</i> et entrez votre code pour vivre l'expérience intergénérationelle !</span></li>
 				</ol>
 			</div>
 		</div>

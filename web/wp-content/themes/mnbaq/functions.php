@@ -95,7 +95,7 @@ function create_comments() {
 			}
  		}
  		$profile = get_userprofile($profileId);
- 		wp_redirect('?action=list&work=' .  $workId . '&emotions=' . join('_', $selectedEmotions) . '&exclude_category=' . $profile->cat_id . "&profile=" . $profile->prf_id);
+ 		wp_redirect('?action=list&work=' .  $workId . '&emotions=' . join('_', $selectedEmotions) . '&exclude_category=' . $profile->cat_id . "&profile=" . $profileId);
 		exit;		
   	} // end if
 

@@ -41,13 +41,22 @@ h4 {
 	background-color: rgba(243, 119, 111, 0.8);
 	padding-bottom: 30px;
 	li {
-		color: black;
+		color: white;
 		font-size: 0.8em;
+		& span {
+			color: black;
+			
+		}
 	}
 	.active,  .active.next + li {
 		color: white;
 		font-weight: 700;
 		font-size: 0.9em;
+
+		& span {
+			color: black;
+		}
+		
 	}	
 	
 }

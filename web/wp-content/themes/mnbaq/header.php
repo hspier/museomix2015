@@ -16,6 +16,7 @@
 	<title>Générateur d'émotions</title>		
 	<script src="<?php bloginfo('template_directory'); ?>/js/modernizr.js"></script>
 	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+	<link rel="apple-touch-icon" href="<?php bloginfo('template_directory'); ?>/img/GE.png">
 </head>
 
 <body>
