@@ -2161,6 +2161,28 @@ input[type=checkbox] {
     margin-bottom: 0;
     color: #005cab;
     text-transform: uppercase; }
+  .rotate .generate {
+    font-size: 5em;
+    color: #f3776f;
+    text-transform: uppercase;
+    position: absolute;
+    top: -120px;
+    right: 90px;
+    margin-bottom: 0;
+    letter-spacing: -2px; }
+  .rotate div.bg-alternate {
+    position: absolute;
+    top: -20px;
+    left: -500px;
+    width: 700px;
+    font-size: 2em;
+    background-color: #f3776f; }
+    .rotate div.bg-alternate .emotion {
+      font-size: 1em;
+      padding-left: 10px;
+      padding-top: 10px;
+      color: white;
+      text-transform: uppercase; }
 
 cite:before {
   content: '« '; }

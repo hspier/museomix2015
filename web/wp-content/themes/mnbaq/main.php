@@ -1,13 +1,8 @@
 <div class="row">
 	<div class="columns hide-for-small-only medium-2">
 		<div class="rotate">
-			<div><p class="bonjour">Bonjour</p></div>					
-			<p class="name">
-				<?php 
-					$profile = get_userprofile($_GET['profile']);
-					echo $profile->prf_firstname;
-				?>
-			</p>
+			<p class="generate">Générateur</p>
+			<div class="bg-alternate"><p class="emotion">d'émotions</p></div>
 		</div>
 	</div>
 	<?php 

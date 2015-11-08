@@ -76,6 +76,35 @@ input[type=checkbox] {
 		color: $brand-color;
 		text-transform: uppercase;
 	}
+
+	& .generate {
+		font-size: 5em;
+		color: $alternate-color;
+		text-transform: uppercase;
+		position: absolute;		
+		top: -120px;
+		right: 90px;
+		margin-bottom: 0;
+		letter-spacing: -2px;
+	}
+
+	& div.bg-alternate {
+		position: absolute;
+		
+		top: -20px;	
+		left: -500px;		
+		width: 700px;
+		font-size: 2em;
+		background-color: $alternate-color;
+		& .emotion {	
+			font-size: 1em;		
+			padding-left: 10px;
+			padding-top: 10px;
+			color: white;
+			text-transform: uppercase;
+		}
+	} 
+
 	-webkit-transform: rotate(-90deg);
 	-moz-transform: rotate(-90deg);
 	-ms-transform: rotate(-90deg);
