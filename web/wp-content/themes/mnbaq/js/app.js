@@ -98,11 +98,7 @@ $(document).ready(function() {
 
 	if($("#btn-enter").length > 0) {
 		$("#btn-enter").click(function(ev) {		
-			if(window.location.search.indexOf("profile=") === -1) {
-				goTo("list", "log");				
-			} else {
-				goTo("list", "create-feedback");
-			}			
+			goTo("list", "log");			
 		})
 	}
 

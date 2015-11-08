@@ -24,13 +24,14 @@
 			echo '</strong></h6>';
 			echo '<h6>';
 			echo $work->wrk_author;
-			echo '</h6>';
-			echo '<button ';
+			echo '</h6>';			
 			if(!empty($exclude_category)) {
+				echo '<button ';
 				echo 'id="btn-list">Tout voir';
-			} else {
-				echo 'id="btn-enter">Réagir';
-			}			
+				echo '</button>';
+			} 
+			echo '<button ';
+			echo 'id="btn-enter">Réagir';
 			echo '</button>';
 			if(isset($_GET['profile'])) {
 				echo '<button id="btn-quit">Quitter</button>';	
