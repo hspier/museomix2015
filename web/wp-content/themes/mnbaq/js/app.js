@@ -45,6 +45,9 @@ $(document).ready(function() {
 				init = true;
 			}			
 			$("#keyboard").show();
+			setTimeout(600000 function() {
+				$("#keyboard").hide();
+			})
 		});
 	}
 
