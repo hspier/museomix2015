@@ -66,8 +66,7 @@ function create_comments() {
 		$workId = $_GET['work'];
 
  		$GLOBALS['wpdb']->insert('mnbaq_profile_feedback', array( 
- 			'PRF_COMMENTS' => $_POST['comments'],  
- 			'PRF_AUDIO' => $_POST['audio'],
+ 			'PRF_COMMENTS' => $_POST['comments'],   			
  			'PRF_ID' => $profileId,
  			'WRK_ID' => $workId),
  		array( 
@@ -81,16 +80,18 @@ function create_comments() {
  		$selectedEmotions = array();
  		foreach($emotions as $emotion) {
  			$name = 'emotion_' . $emotion->emo_id;
- 			$value = $_POST[$name];
- 			if($value) {
-	 			$GLOBALS['wpdb']->insert('mnbaq_profile_feedback_emotion', array( 
-	 			'PRF_FEEDBACK_ID' => $feedbackId,  
-	 			'EMO_ID' => $emotion->emo_id ),
-		 		array( 
-				'%d', 
-				'%d'				
-				) );
-				array_push($selectedEmotions, $emotion->emo_id);
+ 			if(isset($_POST[$name])) {
+	 			$value = $_POST[$name];
+	 			if($value) {
+		 			$GLOBALS['wpdb']->insert('mnbaq_profile_feedback_emotion', array( 
+		 			'PRF_FEEDBACK_ID' => $feedbackId,  
+		 			'EMO_ID' => $emotion->emo_id ),
+			 		array( 
+					'%d', 
+					'%d'				
+					) );
+					array_push($selectedEmotions, $emotion->emo_id);
+				}
 			}
  		}
  		$profile = get_userprofile($profileId);
