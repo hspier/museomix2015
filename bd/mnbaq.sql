@@ -9,6 +9,11 @@ drop table MNBAQ_MUSEUM_ROOM;
 drop table MNBAQ_EMOTION;
 drop table MNBAQ_CATEGORY;
 drop table MNBAQ_PROFILE;
+select * From mnbaq_profile_feedback;
+
+delete from mnbaq_profile_event where prf_id in (66);
+delete from mnbaq_profile where prf_id in (66);
+delete from mnbaq_profile_feedback;
 
 create table MNBAQ_CATEGORY (
 	CAT_ID int NOT NULL,
@@ -16,6 +21,13 @@ create table MNBAQ_CATEGORY (
     CAT_VALUE varchar(255),
     
     PRIMARY KEY (CAT_ID)
+);
+
+create table MNBAQ_AVATAR (
+	AVA_ID int NOT NULL,
+    AVA_IMG varchar(255),
+    
+    PRIMARY KEY (AVA_ID)
 );
 
 create table MNBAQ_PROFILE (
@@ -133,7 +145,7 @@ insert into MNBAQ_EMOTION(EMO_ID, EMO_VALUE, EMO_IMG) values (10, 'Ennuyant', 'i
 insert into MNBAQ_EMOTION(EMO_ID, EMO_VALUE, EMO_IMG) values (11, 'Envahi', 'img/emotion/Envahi.svg');
 insert into MNBAQ_EMOTION(EMO_ID, EMO_VALUE, EMO_IMG) values (12, 'Nostalgique', 'img/emotion/Nostalgique.svg');
 insert into MNBAQ_EMOTION(EMO_ID, EMO_VALUE, EMO_IMG) values (13, 'Tendresse', 'img/emotion/Tendresse.svg');
-insert into MNBAQ_EMOTION(EMO_ID, EMO_VALUE, EMO_IMG) values (14, 'Traditionnel', 'img/emotion/Traditionnelle.svg');
+insert into MNBAQ_EMOTION(EMO_ID, EMO_VALUE, EMO_IMG) values (14, 'Traditionnel', 'img/emotion/Traditionnel.svg');
 insert into MNBAQ_EMOTION(EMO_ID, EMO_VALUE, EMO_IMG) values (15, 'Inégalité', 'img/emotion/Inegalite.svg');
 insert into MNBAQ_EMOTION(EMO_ID, EMO_VALUE, EMO_IMG) values (16, 'Vieux-Jeu', 'img/emotion/Vieux-Jeu.svg');
 

@@ -1,17 +1,39 @@
-.icon-emotion {
-	width: 32px;
-	height: 32px;
+.img-icon {
+	width: 64px;
+	height: 64px;
 }
 
-.btn-emotion {
+.btn-icon {
 	@extend .button;
-	background-color: white;
+	background-color: transparent;
+	text-align: center;
 	color: black;	
+
+	&[disabled], &[disabled]:hover, &[disabled]:focus {
+		background-color: transparent;
+		path {
+			fill: grey;
+		}
+	}
+
+	&:hover, &:focus {
+		background-color: transparent;
+		outline: none;
+		color: black;
+		path {
+			fill: red;
+		}
+	} 
 }
 
-input[type=checkbox]:checked + .btn-emotion {
-	background-color: black;
-	color: white;   	
+#btn-comments, #btn-audio {
+	path {
+		fill: blue;
+	}
+}
+
+input[type=checkbox]:checked + .btn-icon path {	
+	fill: red;
 }
 
 input[type=checkbox] {
@@ -24,6 +46,44 @@ textarea {
 	resize: none;
 }
 
+strong {
+	font-weight: 700;
+}
+
 .hidden {
 	display: none;
+}
+
+.columns.clear-padding {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.comments_box {
+	padding: 10px;
+	border: 1px solid black;
+}
+
+.comments_1 {
+	background-color: salmon;
+}
+
+.comments_2 {
+	background-color: lightblue;	
+}
+
+.comments_3 {
+	background-color: lightgreen;
+}
+
+.comments_4 {
+	background-color: beige;
+}
+
+.comments_5 {
+	background-color: lightgrey;
+}
+
+.comments_6 {
+	background-color: lightbrown;
 }

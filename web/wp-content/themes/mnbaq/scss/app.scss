@@ -4,5 +4,7 @@
 @import "forms";
 @import "comments";
 
-
+body {
+	overflow-y: auto;
+}
 

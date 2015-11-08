@@ -847,7 +847,7 @@ select {
     right: 91.66667%;
     left: auto; } }
 
-button, .button, .btn-emotion {
+button, .button, .btn-icon {
   border-style: solid;
   border-width: 0px;
   cursor: pointer;
@@ -988,7 +988,7 @@ button::-moz-focus-inner {
   padding: 0; }
 
 @media only screen and (min-width:40.063em) {
-  button, .button, .btn-emotion {
+  button, .button, .btn-icon {
     display: inline-block; } }
 
 /* Standard Forms */
@@ -2093,7 +2093,7 @@ blockquote, blockquote p {
 .form-submit {
   text-align: center; }
 
-.form-keyboard .button, .form-keyboard .btn-emotion {
+.form-keyboard .button, .form-keyboard .btn-icon {
   padding-top: 6px;
   padding-left: 10px;
   padding-right: 10px;
@@ -2101,17 +2101,30 @@ blockquote, blockquote p {
   .form-keyboard .button:hover {
     color: blue; }
 
-.icon-emotion {
-  width: 32px;
-  height: 32px; }
+.img-icon {
+  width: 64px;
+  height: 64px; }
 
-.btn-emotion {
-  background-color: white;
+.btn-icon {
+  background-color: transparent;
+  text-align: center;
   color: black; }
+  .btn-icon[disabled], .btn-icon[disabled]:hover, .btn-icon[disabled]:focus {
+    background-color: transparent; }
+    .btn-icon[disabled] path, .btn-icon[disabled]:hover path, .btn-icon[disabled]:focus path {
+      fill: grey; }
+  .btn-icon:hover, .btn-icon:focus {
+    background-color: transparent;
+    outline: none;
+    color: black; }
+    .btn-icon:hover path, .btn-icon:focus path {
+      fill: red; }
 
-input[type=checkbox]:checked + .btn-emotion {
-  background-color: black;
-  color: white; }
+#btn-comments path, #btn-audio path {
+  fill: blue; }
+
+input[type=checkbox]:checked + .btn-icon path {
+  fill: red; }
 
 input[type=checkbox] {
   position: absolute;
@@ -2121,5 +2134,37 @@ input[type=checkbox] {
 textarea {
   resize: none; }
 
+strong {
+  font-weight: 700; }
+
 .hidden {
   display: none; }
+
+.columns.clear-padding {
+  padding-left: 0px;
+  padding-right: 0px; }
+
+.comments_box {
+  padding: 10px;
+  border: 1px solid black; }
+
+.comments_1 {
+  background-color: salmon; }
+
+.comments_2 {
+  background-color: lightblue; }
+
+.comments_3 {
+  background-color: lightgreen; }
+
+.comments_4 {
+  background-color: beige; }
+
+.comments_5 {
+  background-color: lightgrey; }
+
+.comments_6 {
+  background-color: lightbrown; }
+
+body {
+  overflow-y: auto; }
