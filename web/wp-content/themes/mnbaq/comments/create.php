@@ -87,7 +87,7 @@
 					<button id="btn-comments" class="btn-icon"><img class="img-icon" src="<?php bloginfo('template_directory'); ?>/img/clavier-2.svg"></button>
 					<button id="btn-audio" class="btn-icon" disabled><img class="img-icon" src="<?php bloginfo('template_directory'); ?>/img/micro-2.svg"></button>
 				</div>
-				<div id="comments_row" class="row hidden">
+				<div id="comments_row" class="row">
 					<textarea rows="10" placeholder="Saisir votre commentaire..." name="comments"></textarea>
 				</div>
 				<div class="form-submit">
